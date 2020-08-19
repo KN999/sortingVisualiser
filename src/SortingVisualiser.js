@@ -16,6 +16,26 @@ const SortingVisualiser = () => {
     GenerateRandomBar(MAX_BAR, setNums);
   },[])
 
+  const Test = (TestSort) => {
+    for (let i = 0; i < 100; i++) {
+      GenerateRandomBar(randomIntForInterval(1, 1000), setNums);
+      const Arr1 = nums.slice().sort((a, b) => a - b);
+      const Arr2 = TestSort(nums);
+
+      let flag = true;
+
+      if (Arr1.length === Arr2.length) {
+        for (let i = 0; i < Arr1.length; i++) {
+          if (Arr1[i] !== Arr2[i]) {
+            flag = false;
+          }
+        }
+      } else flag = false;
+
+      console.log(flag);
+    }
+  };
+
   return (
     <div>
       <div>
