@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GenerateArray } from './GenerateRandom'
+import { GenerateRandomBar, randomIntForInterval } from './GenerateRandom'
 import { MergeSort } from './SortingAlgorithms/MergeSort'
 import { BubbleSort } from './SortingAlgorithms/BubbleSort'
 import { QuickSort } from './SortingAlgorithms/QuickSort'
@@ -13,18 +13,19 @@ const SortingVisualiser = () => {
   const [nums, setNums] = useState([]);
 
   useEffect(() => {
-    GenerateArray(MAX_BAR, setNums);
+    GenerateRandomBar(MAX_BAR, setNums);
   },[])
 
   return (
     <div>
       <div>
-        <button onClick={() => GenerateArray(MAX_BAR, setNums)}>Shuffle</button>
-        <button onClick={() => MergeSort()}>Merge Sort</button>
+        <button onClick={() => GenerateRandomBar(MAX_BAR, setNums)}>Shuffle</button>
+        <button onClick={() => MergeSort}>Merge Sort</button>
         <button onClick={() => BubbleSort()}>Bubble Sort</button>
         <button onClick={() => QuickSort()}>Quick Sort</button>
         <button onClick={() => InsertionSort()}>Insertion Sort</button>
         <button onClick={() => SelectionSort()}>Selection Sort</button>
+        <button onClick={() => Test(MergeSort)}>Test Sort</button>
       </div>
       <div className="array-bar">
         {nums.map((value, key) => (
