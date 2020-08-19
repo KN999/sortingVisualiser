@@ -1,0 +1,10 @@
+.array-bar {
+    display: inline-flex;
+}
+
+.bar {
+    margin: 0px 1px;
+    width: 3px;
+    background-color: blueviolet;
+    display: inline-block;
+}
