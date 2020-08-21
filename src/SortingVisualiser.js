@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { GenerateRandomBar, randomIntForInterval } from './GenerateRandom'
-import { MergeSort } from './SortingAlgorithms/MergeSort'
-import { BubbleSort } from './SortingAlgorithms/BubbleSort'
-import { QuickSort } from './SortingAlgorithms/QuickSort'
-import { InsertionSort } from './SortingAlgorithms/InsertionSort'
-import { SelectionSort } from './SortingAlgorithms/SelectionSort'
-import { Test } from './Test'
+import { GenerateRandomBar } from './GenerateRandom'
+import Navbar from './Navbar'
 import "./SortingVisualiser.css";
 
 const MAX_BAR = 325;
 
 const SortingVisualiser = () => {
   const [nums, setNums] = useState([]);
-  const [animation, setAnimation] = useState([]);
 
   useEffect(() => {
     GenerateRandomBar(MAX_BAR, setNums);
@@ -20,15 +14,7 @@ const SortingVisualiser = () => {
 
   return (
     <div>
-      <div>
-        <button onClick={() => GenerateRandomBar(MAX_BAR, setNums)}>Shuffle</button>
-        <button onClick={() => MergeSort(nums, animation)}>Merge Sort</button>
-        <button onClick={() => BubbleSort()}>Bubble Sort</button>
-        <button onClick={() => QuickSort()}>Quick Sort</button>
-        <button onClick={() => InsertionSort()}>Insertion Sort</button>
-        <button onClick={() => SelectionSort()}>Selection Sort</button>
-        <button onClick={() => Test(MergeSort)}>Test Sort</button>
-      </div>
+      <Navbar nums={nums} setNums={setNums}/>
       <div className="array-bar">
         {nums.map((value, key) => (
           <div className="bar" key={key} style={{ height: `${value}px` }}></div>
