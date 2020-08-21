@@ -5,6 +5,7 @@ import { BubbleSort } from './SortingAlgorithms/BubbleSort'
 import { QuickSort } from './SortingAlgorithms/QuickSort'
 import { InsertionSort } from './SortingAlgorithms/InsertionSort'
 import { SelectionSort } from './SortingAlgorithms/SelectionSort'
+import { Test } from './Test'
 import "./SortingVisualiser.css";
 
 const MAX_BAR = 325;
@@ -12,31 +13,10 @@ const MAX_BAR = 325;
 const SortingVisualiser = () => {
   const [nums, setNums] = useState([]);
   const [animation, setAnimation] = useState([]);
+
   useEffect(() => {
     GenerateRandomBar(MAX_BAR, setNums);
   },[])
-
-  const Test = (TestSort) => {
-    for (let i = 0; i < 100; i++) {
-      GenerateRandomBar(randomIntForInterval(1, 1000), setNums);
-      const Arr1 = nums.slice().sort((a, b) => a - b);
-      
-      const Arr2 = TestSort(nums, animation);
-
-      let flag = "true";
-
-      if (Arr1.length === Arr2.length) {
-        for (let i = 0; i < Arr1.length; i++) {
-          if (Arr1[i] !== Arr2[i]) {
-            console.log(Arr1[i]," : ",Arr2[i]);
-            flag = "false1";
-          }
-        }
-      } else flag = "false2";
-
-      console.log(flag);
-    }
-  };
 
   return (
     <div>
