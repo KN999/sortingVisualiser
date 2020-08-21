@@ -19,9 +19,9 @@ const Navbar = (props) => {
       <button onClick={() => props.animation(MergeSort(props.nums))}>Merge Sort</button>
       <button onClick={() => props.animation(BubbleSort(props.nums))}>Bubble Sort</button>
       <button onClick={() => QuickSort()}>Quick Sort</button>
-      <button onClick={() => InsertionSort()}>Insertion Sort</button>
+      <button onClick={() => props.animation(InsertionSort(props.nums))}>Insertion Sort</button>
       <button onClick={() => SelectionSort()}>Selection Sort</button>
-      <button onClick={() => Test(BubbleSort)}>Test Sort</button>
+      <button onClick={() => Test(InsertionSort)}>Test Sort</button>
     </div>
   );
 };
