@@ -1,6 +1,7 @@
 button {
     background: royalblue;
     width: 13vw;
+    color: white;
     height: 6vh;
     margin: 7px;
     border: 2px double #000;
