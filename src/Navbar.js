@@ -8,7 +8,7 @@ import { GenerateRandomBar } from './GenerateRandom'
 import './Navbar.css'
 import { Test } from './Test'
 
-const MAX_BAR = 125;
+const MAX_BAR = 225;
 
 const Navbar = (props) => {
   return (
@@ -18,10 +18,10 @@ const Navbar = (props) => {
       </button>
       <button onClick={() => props.animation(MergeSort(props.nums))}>Merge Sort</button>
       <button onClick={() => props.animation(BubbleSort(props.nums))}>Bubble Sort</button>
-      <button onClick={() => QuickSort()}>Quick Sort</button>
+      <button onClick={() => props.animation(QuickSort(props.nums))}>Quick Sort</button>
       <button onClick={() => props.animation(InsertionSort(props.nums))}>Insertion Sort</button>
       <button onClick={() => props.animation(SelectionSort(props.nums))}>Selection Sort</button>
-      <button onClick={() => Test(SelectionSort)}>Test Sort</button>
+      <button onClick={() => Test(QuickSort)}>Test Sort</button>
     </div>
   );
 };

@@ -13,6 +13,7 @@ const SortingVisualiser = () => {
   },[])
 
   const Animate = (animation) => {
+    console.log("------------",animation.length)
     for(let i=0; i<animation.length; i++) {
       const arrayBars = document.getElementsByClassName('bar');
       const isColorChange = i%3 !== 2;

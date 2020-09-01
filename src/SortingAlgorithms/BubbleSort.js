@@ -25,7 +25,7 @@ const BubbleSort = (arr) => {
         //     oper : 'final'
         // })
     }
-    
+    return array;
     return animation;
 }
 

@@ -10,20 +10,22 @@ const Test = (algo) => {
     const Arr2 = algo(nums);
 
     let flag = "true";
+    const size1 = Arr1.length;
+    const size2 = Arr2.length;
 
-    if (Arr1.length === Arr2.length) {
-      for (let i = 0; i < Arr1.length; i++) {
+    if (size1 === size2) {
+      for (let i = 0; i < size1; i++) {
         
         if (Arr1[i] !== Arr2[i]) {
-          console.log("Arr1 : ", Arr1);
-          console.log("Arr2 : ", Arr2);
+          //console.log("Arr1 : ", Arr1);
+          //console.log("Arr2 : ", Arr2);
           flag = "false1";
         }
       }
     } else {
       flag = "false2";
-      console.log("Arr1 : ", Arr1);
-      console.log("Arr2 : ", Arr2);
+      //console.log("Arr1 : ", Arr1);
+      //console.log("Arr2 : ", Arr2);
     }
 
     console.log(flag);
